@@ -1249,7 +1249,7 @@
           </div>
           <div class="row g-5">
             <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
-              <div class="p-5 h-100 rounded contact-map">
+              <div method = "post" class="p-5 h-100 rounded contact-map">
                 <iframe
                   class="rounded w-100 h-100"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.567733202173!2d-82.94977202408397!3d42.26640287120177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b2a3278db4d13%3A0xb43456f70b5ff983!2s4325%20County%20Rd%2042%2C%20Windsor%2C%20ON%20N9A%206J3%2C%20Canada!5e0!3m2!1sen!2sin!4v1699471162160!5m2!1sen!2sin"
@@ -1297,37 +1297,56 @@
                 </div>
                 <div class="text-start">
                   <button
+                  id = 'btn'
                     class="btn bg-primary text-white py-3 px-5"
                   >
                     Send Message
                   </button>
                 </div>
               </form>
-              <!-- <script
+              
+
+              <script>
+                document.getElementById('btn').addEventListener('click', function (event) {
+                    event.preventDefault();
+            
+                    var params = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        company: document.getElementById('company').value, // Corrected id
+                        message: document.getElementById('message').value,
+                    };
+            
+                    const serviceID = "service_9ed06vu";
+                    const templateID = "template_8suovxo";
+            
+                    emailjs.send(serviceID, templateID, params)
+                        .then(res => {
+                            document.getElementById('name').value = "";
+                            document.getElementById('email').value = "";
+                            document.getElementById('company').value = ""; // Corrected id
+                            document.getElementById('message').value = "";
+                            console.log(res);
+                            alert("Your message was sent successfully!!");
+                        })
+                        .catch(err => console.log(err));
+                });
+            </script>
+
+
+              <script
               type="text/javascript"
               src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
               ></script>
-              <script>
-                var params = {
-                  name: document.getElementById("name").value,
-                  email: document.getElementById("email").value,
-                  company: document.getElementById("company").value,
-                  message: document.getElementById("message").value,
-                };
+
+              <script type="text/javascript">
+                (function () {
+                  emailjs.init("AMkLyPV4KirEhwHga");
+                })();
+              </script>
 
 
-                  emailjs.send(serviceID, templateID, params)
-                  .then(res=>{
-                      document.getElementById("name").value = "";
-                      document.getElementById("email").value = "";
-                      document.getElementById("email").value = "";
-                      document.getElementById("message").value = "";
-                      console.log(res);
-                      alert("Your message sent successfully!!")
 
-                  })
-                  .catch(err=>console.log(err));
-              </script> -->
             </div>
           </div>
         </div>
