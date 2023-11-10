@@ -197,7 +197,7 @@
                     Fateh Security Services
                 </h1>
                 <p class="mb-4 text-white fs-5 animated fadeInDown">
-                    By choosing Fateh Security Serives, professionals and services, you choose among the fastest-growing security providers in Canada. With our services, we foresee a secure environment for our clients with officers and guards equipped with all the latest technology backed with a predetermined plan to overcome any situation and resolve any problem effortlessly
+                    <!-- By choosing Fateh Security Serives, professionals and services, you choose among the fastest-growing security providers in Canada. With our services, we foresee a secure environment for our clients with officers and guards equipped with all the latest technology backed with a predetermined plan to overcome any situation and resolve any problem effortlessly -->
                 </p>
                 <a href="" class="me-2"
                   ><button
@@ -1261,17 +1261,19 @@
               </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
-              <form action = "https://submit-form.com/wdTumL4K" class="p-5 rounded contact-form">
+              <form  class="p-5 rounded contact-form">
                 <div class="mb-4">
                   <input
                     type="text"
                     class="form-control border-0 py-3"
                     placeholder="Your Name"
+                    id = 'name'
                   />
                 </div>
                 <div class="mb-4">
                   <input
                     type="email"
+                    id = 'email'
                     class="form-control border-0 py-3"
                     placeholder="Your Email"
                   />
@@ -1279,6 +1281,7 @@
                 <div class="mb-4">
                   <input
                     type="text"
+                    id = 'company'
                     class="form-control border-0 py-3"
                     placeholder="Company"
                   />
@@ -1286,6 +1289,7 @@
                 <div class="mb-4">
                   <textarea
                     class="w-100 form-control border-0 py-3"
+                    id = 'message'
                     rows="6"
                     cols="10"
                     placeholder="Message"
@@ -1294,12 +1298,36 @@
                 <div class="text-start">
                   <button
                     class="btn bg-primary text-white py-3 px-5"
-                    type="submit"
                   >
                     Send Message
                   </button>
                 </div>
               </form>
+              <!-- <script
+              type="text/javascript"
+              src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+              ></script>
+              <script>
+                var params = {
+                  name: document.getElementById("name").value,
+                  email: document.getElementById("email").value,
+                  company: document.getElementById("company").value,
+                  message: document.getElementById("message").value,
+                };
+
+
+                  emailjs.send(serviceID, templateID, params)
+                  .then(res=>{
+                      document.getElementById("name").value = "";
+                      document.getElementById("email").value = "";
+                      document.getElementById("email").value = "";
+                      document.getElementById("message").value = "";
+                      console.log(res);
+                      alert("Your message sent successfully!!")
+
+                  })
+                  .catch(err=>console.log(err));
+              </script> -->
             </div>
           </div>
         </div>
